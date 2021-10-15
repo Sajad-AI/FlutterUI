@@ -1,4 +1,4 @@
-# fluterui
+# flutterui_web
 
 A new Flutter project.
 
