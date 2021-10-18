@@ -11,6 +11,7 @@ class MyStrings {
   static const String searchHint = 'searchHint';
   static const String widgetType = 'widgetType';
   static const String nameInCode = 'nameInCode';
+  static const String textValue = 'textValue';
 
 
 

@@ -10,4 +10,5 @@ final Map<String, String> enUS = {
   MyStrings.searchHint: 'Search widgets...',
   MyStrings.widgetType: 'Widget Type',
   MyStrings.nameInCode: 'Name in code',
+  MyStrings.textValue: 'Text value',
 };

@@ -21,7 +21,7 @@ class Items {
   String? title;
   String? icon;
   Widget? code;
-  List<MyValue>? values;
+  Map<String, dynamic>? values;
 
 
 
@@ -39,19 +39,6 @@ class Items {
   String toString() {
     return '{code : $code , child : $child}';
   }
-}
-
-class MyValue {
-  String key;
-  String value;
-
-
-
-  MyValue({
-    required this.key,
-    required this.value,
-  });
-
 }
 
 enum WidgetType { single, multi, silver, none, main }

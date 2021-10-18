@@ -30,7 +30,6 @@ Widget getBody(MainController controller) {
                 padding: const EdgeInsets.all(15.0),
                 child: InputWidget(
                   hintText: MyStrings.searchHint.tr,
-                  labelText: MyStrings.searchHint.tr,
                   controller: controller.searchController,
                   suffixIcon: const Icon(
                     CupertinoIcons.search,
@@ -82,7 +81,9 @@ Widget getBody(MainController controller) {
                         height: controller.deviceWidth.value *
                             controller.ratio.value,
                         color: MyColors.background,
-                        child:  ItemCanvas(items: controller.canvasItems.value,),
+                        child: ItemCanvas(
+                          items: controller.canvasItems.value,
+                        ),
                       ),
                     ),
                   ],
@@ -115,7 +116,9 @@ Widget getBody(MainController controller) {
                   ],
                 ),
               ),
-              const SizedBox(height: 8.0,),
+              const SizedBox(
+                height: 8.0,
+              ),
               Container(
                 padding: const EdgeInsets.all(8.0),
                 width: 320,
@@ -127,15 +130,34 @@ Widget getBody(MainController controller) {
                       MyStrings.nameInCode.tr,
                       style: MyStyles.body2.copyWith(color: MyColors.text),
                     ),
-                    // controller.currentWidget.value.code ??
-                    // Text(
-                    //   controller.currentWidget.value.title.toString(),
-                    //   style: MyStyles.body2.copyWith(color: MyColors.text),
-                    // ),
+                    controller.currentWidget.value.code ??
+                        Text(
+                          controller.currentWidget.value.title.toString(),
+                          style: MyStyles.body2.copyWith(color: MyColors.text),
+                        ),
                   ],
                 ),
               ),
-
+              const SizedBox(
+                height: 8.0,
+              ),
+              Container(
+                padding: const EdgeInsets.all(8.0),
+                width: 320,
+                child: InputWidget(
+                  hintText:
+                      controller.currentWidget.value.values?['text'] ?? '',
+                  labelText: MyStrings.textValue.tr,
+                  onChanged: (value) {
+                    print("---------------------------");
+                    print(value);
+                    print("---------------------------");
+                    controller.currentWidget.value.values?['text'] = value!;
+                    controller.currentWidget.value.title = value!;
+                    controller.updateCanvas();
+                  },
+                ),
+              ),
             ],
           ),
         ),
@@ -173,8 +195,8 @@ Widget _buildComponents(MainController controller, int index) {
   );
 }
 
-Widget _buildComponentItems(MainController controller, int index,
-    Component component) {
+Widget _buildComponentItems(
+    MainController controller, int index, Component component) {
   Items item = component.items[index];
 
   Rx<Color> borderColor = MyColors.grey01.obs;
@@ -187,9 +209,7 @@ Widget _buildComponentItems(MainController controller, int index,
     borderColor.value = MyColors.grey01;
   }
 
-  void _incrementEnter(PointerEvent details) {
-
-  }
+  void _incrementEnter(PointerEvent details) {}
   final GlobalKey _draggableKey = GlobalKey();
 
   return Obx(() {
@@ -244,7 +264,6 @@ Widget _buildComponentItems(MainController controller, int index,
       ),
     );
   });
-
 }
 
 class DraggingListItem extends StatelessWidget {
@@ -269,7 +288,7 @@ class DraggingListItem extends StatelessWidget {
           width: 150,
           child: Opacity(
             opacity: 0.85,
-            child:  SvgPicture.asset(
+            child: SvgPicture.asset(
               icon.toString(),
               fit: BoxFit.scaleDown,
             ),
@@ -279,5 +298,3 @@ class DraggingListItem extends StatelessWidget {
     );
   }
 }
-
-

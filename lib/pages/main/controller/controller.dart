@@ -22,6 +22,7 @@ class MainController extends GetxController {
   RxList<ItemLeftNavigation> items = <ItemLeftNavigation>[].obs;
   RxList<Component> components = <Component>[].obs;
   Rx<Items> currentWidget = Items().obs;
+  Rx<Items> currentText = Items().obs;
   late TextEditingController searchController;
 
   Rx<Items> canvasItems = Items().obs;
@@ -63,10 +64,14 @@ class MainController extends GetxController {
     );
     count.value++;
 
-    if (count.value > 2) {
+    if (count.value > 1) {
+      // print("--------------------");
+      // print(canvasItems.value.child);
       print("--------------------");
-      print(canvasItems.value.child);
+      print(components.last.items.last);
       print("--------------------");
+
+
     }
   }
 
@@ -125,7 +130,8 @@ class MainController extends GetxController {
           type: WidgetType.none,
           title: 'Text',
           icon: MyImages.text,
-          code: Text("Text1", style: TextStyle(backgroundColor: Colors.green,),)),
+          values: values
+      ),
       Items(
           id: 4,
           type: WidgetType.single,
@@ -159,4 +165,11 @@ class MainController extends GetxController {
       ),
     ]));
   }
+
+  final Map<String, dynamic> values = {
+    'text' : 'Text11',
+    // 'controller' : searchController,
+  };
 }
+
+

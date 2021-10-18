@@ -5,10 +5,11 @@ import 'package:flutterui_web/constant/colors.dart';
 import 'package:flutterui_web/constant/dimens.dart';
 
 class InputWidget extends StatelessWidget {
-  final String labelText;
-  final String hintText;
-  final TextEditingController controller;
+  final String? labelText;
+  final String? hintText;
+  final TextEditingController? controller;
   final FormFieldSetter<String>? onSaved;
+  final FormFieldSetter<String>? onChanged;
   final FormFieldValidator<String>? validator;
   final Color? backgroundColor;
   final TextInputType? keyboardType;
@@ -20,10 +21,11 @@ class InputWidget extends StatelessWidget {
 
   const InputWidget({
     Key? key,
-    required this.labelText,
-    required this.hintText,
-    required this.controller,
+    this.labelText,
+    this.hintText,
+    this.controller,
     this.onSaved,
+    this.onChanged,
     this.validator,
     this.backgroundColor,
     this.keyboardType,
@@ -44,13 +46,14 @@ class InputWidget extends StatelessWidget {
       controller: controller,
       autovalidateMode: autovalidateMode ?? AutovalidateMode.onUserInteraction,
       onSaved: onSaved,
+      onChanged: onChanged,
       validator: validator,
       decoration: InputDecoration(
         labelStyle: MyStyles.body2.copyWith(
           color: MyColors.grey04,
         ),
         contentPadding:
-            const EdgeInsets.symmetric(vertical: 0.0, horizontal: 12.0),
+        (suffixIcon == null  || prefixIcon == null ) ? const EdgeInsets.symmetric( vertical: 12.0, horizontal: 12.0) : const EdgeInsets.symmetric( horizontal: 12.0),
         isDense: true,
         border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(
@@ -82,6 +85,7 @@ class InputWidget extends StatelessWidget {
           color: MyColors.grey04,
         ),
         hintText: hintText,
+        labelText: labelText,
         suffixIcon: suffixIcon,
         prefixIcon: prefixIcon,
       ),
