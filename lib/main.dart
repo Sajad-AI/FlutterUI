@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       return GetMaterialApp(
         debugShowCheckedModeBanner: false,
         theme: isDarkMode ? appThemeDataDark : appThemeDataLight,
-        initialRoute: Routes.main,
+        initialRoute: Routes.login,
         locale: LocalizationService.locales[appdata.read('langPosition') ?? 0],
         fallbackLocale: LocalizationService.fallbackLocale,
         translations: LocalizationService(),

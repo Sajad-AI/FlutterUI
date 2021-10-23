@@ -1,13 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutterui_web/constant/dimens.dart';
-import 'package:flutterui_web/constant/strings.dart';
-import 'package:flutterui_web/constant/styles.dart';
-import 'package:get/get.dart';
 import 'package:flutterui_web/constant/colors.dart';
-
-import 'button.dart';
+import 'package:flutterui_web/constant/dimens.dart';
+import 'package:flutterui_web/constant/styles.dart';
 
 AppBar getAppbar({required String title,
   IconData? icon,
@@ -18,20 +14,10 @@ AppBar getAppbar({required String title,
     shape: const Border(bottom: BorderSide(color: MyColors.divider, width: MyDimens.divider)),
     centerTitle: false,
     backgroundColor: MyColors.header,
-    title: Row(
-      mainAxisSize: MainAxisSize.max,
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-        Text(
-            title,
-            textAlign: TextAlign.start,
-            style: MyStyles.h5.copyWith(color: MyColors.grey06),
-        ),
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: MyDimens.marginHorizontal1),
-          child: ButtonWidget(text: MyStrings.download.tr, onPressed: () {  }, icon: const Icon(CupertinoIcons.cloud_download_fill, color: MyColors.icon,),),
-        )
-      ],
+    title: Text(
+        title,
+        textAlign: TextAlign.start,
+        style: MyStyles.h5.copyWith(color: MyColors.grey06),
     ),
     leadingWidth: 56,
     leading: iconStart == null

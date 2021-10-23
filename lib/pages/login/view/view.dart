@@ -32,17 +32,13 @@ class View extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetX<MainController>(
+    return GetX<LoginController>(
         initState: (state) {},
         builder: (_) {
           return Scaffold(
               backgroundColor: MyColors.background,
-              appBar: getAppbar(title: _.text.toString(), iconStart: MyImages.icon, actions: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: MyDimens.marginHorizontal1, vertical: MyDimens.margin),
-                  child: ButtonWidget(text: MyStrings.download.tr, onPressed: () {  }, icon: const Icon(CupertinoIcons.cloud_download_fill, color: MyColors.icon,),),
-                )
-              ]),              body: getBody(_));
+              appBar: getAppbar(title: _.text.toString(), iconStart: MyImages.icon),
+              body: getBody(_));
         });
   }
 }
