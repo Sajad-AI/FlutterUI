@@ -62,8 +62,14 @@ class MyStyles {
       fontWeight: FontWeight.w400,
       fontFamily: "Manrope",
       fontStyle: FontStyle.normal,
-      fontSize: 11.0);
+      fontSize: 12.0);
   static const TextStyle body3 = TextStyle(
+      color: MyColors.text,
+      fontWeight: FontWeight.w400,
+      fontFamily: "Manrope",
+      fontStyle: FontStyle.normal,
+      fontSize: 11.0);
+  static const TextStyle body4 = TextStyle(
       color: MyColors.text,
       fontWeight: FontWeight.w400,
       fontFamily: "Manrope",

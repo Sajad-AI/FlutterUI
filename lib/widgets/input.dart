@@ -49,7 +49,7 @@ class InputWidget extends StatelessWidget {
       onChanged: onChanged,
       validator: validator,
       decoration: InputDecoration(
-        labelStyle: MyStyles.body2.copyWith(
+        labelStyle: MyStyles.body3.copyWith(
           color: MyColors.grey04,
         ),
         contentPadding:
@@ -81,7 +81,7 @@ class InputWidget extends StatelessWidget {
             )),
         filled: true,
         fillColor: Colors.transparent,
-        hintStyle: MyStyles.body2.copyWith(
+        hintStyle: MyStyles.body3.copyWith(
           color: MyColors.grey04,
         ),
         hintText: hintText,

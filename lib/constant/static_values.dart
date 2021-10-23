@@ -17,12 +17,10 @@ class CustomValues {
     '16',
   ];
 
-  static String termsLink = 'https://drak.demo.rabsana.ir/terms';
+  static String termsLink = ' https://www.flutterui.io/terms';
   static const String success = 'success';
   static const String bearer = 'Bearer ';
   static const String onBack = 'onBack';
-  static const String fullName = 'fullName';
-  static const String seprate = 'seprate';
 
 
 

@@ -19,7 +19,7 @@ class LeftNavigationItems extends StatelessWidget {
 
   Rx<Color> textColor = MyColors.grey05.obs;
   Rx<Color> iconColor = MyColors.grey04.obs;
-  Rx<TextStyle> style = MyStyles.body3.copyWith(color: MyColors.grey05).obs;
+  Rx<TextStyle> style = MyStyles.body4.copyWith(color: MyColors.grey05).obs;
 
   @override
   Widget build(BuildContext context) {
@@ -65,6 +65,6 @@ class LeftNavigationItems extends StatelessWidget {
   void _incrementExit(PointerEvent details) {
     textColor.value = MyColors.grey05;
     iconColor.value = MyColors.grey04;
-    style.value = MyStyles.body3.copyWith(color: MyColors.grey05);
+    style.value = MyStyles.body4.copyWith(color: MyColors.grey05);
   }
 }

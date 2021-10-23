@@ -107,11 +107,11 @@ Widget getBody(MainController controller) {
                   children: [
                     Text(
                       MyStrings.widgetType.tr,
-                      style: MyStyles.body2.copyWith(color: MyColors.text),
+                      style: MyStyles.body3.copyWith(color: MyColors.text),
                     ),
                     Text(
                       controller.currentWidget.value.title.toString(),
-                      style: MyStyles.body2.copyWith(color: MyColors.text),
+                      style: MyStyles.body3.copyWith(color: MyColors.text),
                     ),
                   ],
                 ),
@@ -128,12 +128,12 @@ Widget getBody(MainController controller) {
                   children: [
                     Text(
                       MyStrings.nameInCode.tr,
-                      style: MyStyles.body2.copyWith(color: MyColors.text),
+                      style: MyStyles.body3.copyWith(color: MyColors.text),
                     ),
                     controller.currentWidget.value.code ??
                         Text(
                           controller.currentWidget.value.title.toString(),
-                          style: MyStyles.body2.copyWith(color: MyColors.text),
+                          style: MyStyles.body3.copyWith(color: MyColors.text),
                         ),
                   ],
                 ),
@@ -255,7 +255,7 @@ Widget _buildComponentItems(
                 TextPrimary(
                   text: item.title.toString(),
                   isCenter: true,
-                  style: MyStyles.body3.copyWith(color: MyColors.grey06),
+                  style: MyStyles.body4.copyWith(color: MyColors.grey06),
                 )
               ],
             ),

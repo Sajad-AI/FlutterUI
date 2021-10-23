@@ -10,8 +10,11 @@ class ButtonWidget extends StatelessWidget {
   final double? width;
   final Color? textColor;
   final Color? backgroundColor;
-  final Color? border;
+  final Color? borderColor;
   final Widget? icon;
+  final TextStyle? style;
+  final EdgeInsetsGeometry? padding;
+  final double? borderRadius;
 
   const ButtonWidget({
     Key? key,
@@ -20,24 +23,26 @@ class ButtonWidget extends StatelessWidget {
     this.width,
     this.textColor,
     this.backgroundColor,
-    this.border,
+    this.borderColor,
     this.icon,
+    this.style,
+    this.padding,
+    this.borderRadius,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle style = ElevatedButton.styleFrom(
-      padding: const EdgeInsets.symmetric(horizontal: 12.0, vertical: 16.0),
+    final ButtonStyle buttonStyle = ElevatedButton.styleFrom(
+      padding: padding ?? const EdgeInsets.symmetric(horizontal: 12.0, vertical: 16.0),
       elevation: 0,
-
-      textStyle: MyStyles.button,
+      textStyle: style ?? MyStyles.button,
       primary: backgroundColor ?? MyColors.white,
       onPrimary: textColor ?? MyColors.grey05,
       shape: RoundedRectangleBorder(
-        borderRadius: const BorderRadius.all(
-          Radius.circular(MyDimens.buttonRadius),
+        borderRadius: BorderRadius.all(
+          Radius.circular( borderRadius ?? MyDimens.buttonRadius),
         ),
-        side: BorderSide(color: border ?? MyColors.border, width: MyDimens.borderWidth, )
+        side: BorderSide(color: borderColor ?? MyColors.border, width: MyDimens.borderWidth, )
       ),
     );
 
@@ -51,7 +56,7 @@ class ButtonWidget extends StatelessWidget {
         label: Text(
           text,
         ),
-        style: style,
+        style: buttonStyle,
       ),
     );
   }

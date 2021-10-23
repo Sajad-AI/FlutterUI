@@ -13,6 +13,12 @@ class MyStrings {
   static const String nameInCode = 'nameInCode';
   static const String textValue = 'textValue';
 
+  static const String loginToConsole = 'loginToConsole';
+  static const String continueWithGoogle = 'continueWithGoogle';
+  static const String beforeTerms = 'beforeTerms';
+  static const String termsAndConditions = 'termsAndConditions';
+  static const String afterTerms = 'afterTerms';
+
 
 
 }

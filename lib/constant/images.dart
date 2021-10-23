@@ -5,6 +5,7 @@ class MyImages {
   static const String icon = 'assets/svg/userpic_initials.svg';
   static const String image = 'assets/svg/image.svg';
   static const String text = 'assets/svg/text.svg';
+  static const String google = 'assets/svg/google.svg';
 
 
 }
