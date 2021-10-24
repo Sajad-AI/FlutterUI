@@ -10,5 +10,7 @@ class MyDimens {
   static const double margin = 8.0;
   static const double iconSize = 18.0;
   static const double canvasPadding = 8.0;
+  static const double paddingContentHorizontal = 60.0;
+  static const double paddingContentVertical = 24.0;
 
 }

@@ -16,4 +16,7 @@ final Map<String, String> enUS = {
   MyStrings.beforeTerms: 'You agree to the ',
   MyStrings.termsAndConditions: 'Terms and Conditions ',
   MyStrings.afterTerms: 'when you sign up.',
+
+  MyStrings.myProjects: 'My Projects',
+  MyStrings.addProject: 'Add Project',
 };

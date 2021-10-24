@@ -20,6 +20,7 @@ class MyColors {
   static const secondary = Color(0xFFEAEBEB);
   static const onSecondary = Color(0xFF4F5661);
   static const borderSecondary = Color(0xFFB3B4B6);
+  static const borderThirty = Color(0x80e5e5e5);
 
   static const disable = Color(0xFFF5F5F7);
   static const bgBottomNavigation = Color(0xFFFFFFFF);
@@ -30,6 +31,7 @@ class MyColors {
   static const divider = grey01;
   static const background = Color(0xFFFFFFFF);
   static const icon = grey05;
+  static const backgroundProjectImage = Color(0xfff2f2f2);
 
   static const grey01 = Color(0xffe0e0e0);
   static const grey02 = Color(0xffc0c0c0);

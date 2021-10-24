@@ -19,6 +19,9 @@ class MyStrings {
   static const String termsAndConditions = 'termsAndConditions';
   static const String afterTerms = 'afterTerms';
 
+  static const String myProjects = 'myProjects';
+  static const String addProject = 'addProject';
+
 
 
 }
