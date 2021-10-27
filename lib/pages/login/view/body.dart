@@ -21,7 +21,16 @@ Widget getBody(LoginController controller) {
           text: MyStrings.continueWithGoogle.tr,
           textColor: MyColors.blue05,
           padding: const EdgeInsets.only(top: 20, bottom: 20, left: 12, right: 48),
-          onPressed: () => {},
+          onPressed: () async {
+            await Authentication.signInWithGoogle().then((result) {
+              print(result);
+              if (result != null) {
+
+              }
+            }).catchError((error) {
+              print('Registration Error: $error');
+            });
+          },
           icon: SvgPicture.asset(MyImages.google, height: 24, width: 24,),
         ),
         const SizedBox(
